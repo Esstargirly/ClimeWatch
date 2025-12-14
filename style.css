@@ -1,0 +1,97 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background: #bc9292;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    min-height: 100vh;
+}
+.cont{
+    width: 600px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 20px;
+}
+.name{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+.name h2{
+    font-size: 26px;
+    font-weight: bold;
+    color: #e19898;
+    letter-spacing: 1px;
+}
+.search{
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+.search input{
+    flex: 1;
+    padding: 10px 13px;
+    border-radius: 20px;
+    border: 2px solid #e19898;
+    outline: none;
+    font-size: 16px;
+}
+.search button{
+    padding: 10px 14px;
+    border-radius: 20px;
+    border: none;
+    background: #e19898;
+    color: #ffff;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+.search button:hover{
+    background: #a26767;
+}
+.main{
+    text-align: center;
+    margin-bottom: 30px;
+}
+.main-icon{
+    width: 100px;
+    margin-bottom: 10px;
+}
+.main h2{
+    font-size: 45px;
+}
+.main h4{
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+.main p{
+    color: #777;
+}
+.part{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+.par1{
+    background: #fff;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+.part-icon{
+    width: 50px;
+    margin-bottom: 10px;
+}
+.part-icon h3{
+    font-size: 16px;
+}
+.part p{
+    margin-top: 8px;
+    font-size: 18px;
+}
