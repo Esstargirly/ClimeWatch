@@ -4,6 +4,7 @@
     box-sizing: border-box;
 }
 body{
+    padding: 20px;
     background: #bc9292;
     display: flex;
     justify-content: center;
@@ -11,10 +12,12 @@ body{
     min-height: 100vh;
 }
 .cont{
-    width: 600px;
+    width: 100%;
+    max-width: 600px;
     background: #fff;
     padding: 20px;
     border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
 }
 .name{
     display: flex;
@@ -23,7 +26,7 @@ body{
     margin-bottom: 25px;
 }
 .name h2{
-    font-size: 26px;
+    font-size: 2rem;
     font-weight: bold;
     color: #e19898;
     letter-spacing: 1px;
@@ -32,6 +35,7 @@ body{
     display: flex;
     gap: 15px;
     margin-bottom: 30px;
+    flex-wrap: wrap;
 }
 .search input{
     flex: 1;
@@ -39,7 +43,7 @@ body{
     border-radius: 20px;
     border: 2px solid #e19898;
     outline: none;
-    font-size: 16px;
+    font-size: 1rem;
 }
 .search button{
     padding: 10px 14px;
@@ -47,7 +51,7 @@ body{
     border: none;
     background: #e19898;
     color: #ffff;
-    font-size: 14px;
+    font-size: 1rem;
     cursor: pointer;
     transition: background 0.3s ease;
 }
@@ -60,17 +64,20 @@ body{
 }
 .main-icon{
     width: 100px;
+    max-width: 30%;
+    height: auto;
     margin-bottom: 10px;
 }
 .main h2{
-    font-size: 45px;
+    font-size: 2.5rem;
 }
 .main h4{
-    font-size: 20px;
+    font-size: 1.2rem;
     margin-bottom: 5px;
 }
 .main p{
     color: #777;
+    font-size: 0.9rem;
 }
 .part{
     display: grid;
@@ -93,12 +100,12 @@ body{
 }
 .part p{
     margin-top: 8px;
-    font-size: 18px;
+    font-size: 1rem;
 }
 .error{
     text-align: left;
     margin-left: 10px;
-    font-size: 16px;
+    font-size: 1rem;
     margin-top: 10px;
     color: red;
     display: none;
