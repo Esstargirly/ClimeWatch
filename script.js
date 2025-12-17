@@ -8,7 +8,8 @@ const icon = document.querySelector(".main-icon");
 
 async function checkWeather(city) {
     if (!city) return;
-    const response = await fetch (apiUrl + city );
+    try{
+        const response = await fetch (apiUrl + city );
 
     if (response.status == 404){
         document.querySelector(".error").style.display = "block";
@@ -30,32 +31,27 @@ async function checkWeather(city) {
     document.querySelector(".wind").innerHTML = data.wind.speed + "km/h";
     document.querySelector(".visibility").innerHTML = data.visibility + " km";
 
-    if (data.weather[0].main == "Clouds"){
-        icon.src ="./Images/cloud.png";
-    }
-    else if (data.weather[0].main == "Clear"){
-        icon.src = "./Images/sun.png";
-    }
-    else if (data.weather[0].main == "Rain"){
-        icon.src = "./Images/rain.png";
-    }
-    else if (data.weather[0].main == "Drizzle"){
-        icon.src = "./Images/drizzle.png";
-    }
-    else if (data.weather[0].main == "Mist"){
-        icon.src = "./Images/mist.png";
-    }
-    else if (data.weather[0].main == "Snow"){
-        icon.src = "./Images/snow.png";
-    }
-    else if (data.weather[0].main == "Fog"){
-        icon.src = "./Images/fog.png";
-    }
-    else if (data.weather[0].main == "Smoke"){
-        icon.src = "./Images/smoke.png";
-    }
+    const weatherMain = data.weather[0].main;
+        const iconMap = {
+            Clouds: "./Images/cloud.png",
+            Clear: "./Images/sun.png",
+            Rain: "./Images/rain.png",
+            Drizzle: "./Images/drizzle.png",
+            Mist: "./Images/mist.png",
+            Snow: "./Images/snow.png",
+            Fog: "./Images/fog.png",
+            Smoke: "./Images/smoke.png"
+        };
+        icon.src = iconMap[weatherMain] || "./Images/sun2.png";
 
-    document.querySelector(".weather").style.display = "block"
+    document.querySelector(".weather").style.display = "block";
+    document.querySelector(".error").style.display = "none";
+    }
+    catch (error) {
+       document.querySelector(".error").style.display = "block";
+        document.querySelector(".weather").style.display = "none";
+        console.error("Error fetching weather:", error); 
+    }
 }
 searchBtn.addEventListener("click", ()=>{
     checkWeather(searchBox.value);
